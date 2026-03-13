@@ -113,7 +113,7 @@ const Centres = () => {
         </div>
 
         {/* Carousel Container */}
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden mx-auto min-w-[100vh] max-w-4xl">
           <motion.div
             className="flex gap-6"
             animate={{
