@@ -53,7 +53,7 @@ const Navbar = () => {
                 className="text-navy/80 hover:text-navy font-medium text-[13px] tracking-widest uppercase px-4 py-2 rounded-full hover:bg-gray-100/60 transition-all duration-300 relative group"
               >
                 {link}
-                <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-saffron transition-all duration-300 group-hover:w-4 rounded-full"></span>
+                <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-saffron transition-all duration-300 group-hover:w-full rounded-full"></span>
               </motion.a>
             ))}
           </div>

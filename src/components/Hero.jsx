@@ -101,7 +101,7 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: "0px 10px 30px rgba(75, 83, 32, 0.2)" }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#4B5320] text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-[#3A4018] transition-all duration-300 flex items-center justify-center gap-2 group"
+              className="bg-[#4B5320] text-white px-8 py-4 rounded-full font-bold text-sm shadow-xl hover:bg-[#3A4018] transition-all duration-300 flex items-center justify-center gap-2 group"
             >
               Discover
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -109,7 +109,7 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05, backgroundColor: "rgba(0, 0, 128, 0.05)" }}
               whileTap={{ scale: 0.95 }}
-              className="bg-transparent border-2 border-[#000080]/20 text-[#000080] px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 flex items-center justify-center hover:border-[#000080]"
+              className="bg-transparent border-2 border-[#000080]/20 text-[#000080] px-8 py-4 rounded-full font-bold text-sm transition-all duration-300 flex items-center justify-center hover:border-[#000080]"
             >
               Read Reports
             </motion.button>

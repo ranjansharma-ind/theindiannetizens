@@ -158,7 +158,7 @@ const ArticleCard = ({ article, index }) => {
 const ArticleGrid = () => {
   return (
     <section className="py-24 px-8 mx-auto bg-gray-100" id="articles">
-      <div className="flex justify-between items-end mb-16">
+      <div className="flex justify-between items-end mb-16 max-w-7xl mx-auto">
         <motion.div
            initial={{ opacity: 0, x: -30 }}
            whileInView={{ opacity: 1, x: 0 }}
@@ -171,7 +171,7 @@ const ArticleGrid = () => {
       </div>
 
       {/* 6 Grid Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {articles.map((article, i) => (
           <ArticleCard key={article.id} article={article} index={i} />
         ))}
