@@ -37,7 +37,7 @@ const centres = [
     title: "Internal Affairs & Political",
     subtitle: "Domestic Intelligence",
     backgroundImage:
-      "https://images.unsplash.com/photo-1555848962-6ebd0797969c?q=80&w=1000&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1680783954745-3249be59e527?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGludGVsbGlnZW5jZXxlbnwwfHwwfHx8MA%3D%3D",
   },
   {
     id: 6,
@@ -49,24 +49,31 @@ const centres = [
 ];
 
 const Centres = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const visibleCards = 4;
-  const totalCards = centres.length;
+  const [currentIndex, setCurrentIndex] = useState(4);
+  // const visibleCards = 4;
+  // const totalCards = centres.length;
 
   // Duplicate centres for seamless loop
   const duplicatedCentres = [...centres, ...centres, ...centres];
 
+  // responsive cards
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % totalCards);
-    },3000); // Auto-slide every 3 seconds
+    const update = () => {
+      if (window.innerWidth < 640) setCurrentIndex(1);
+      else if (window.innerWidth < 1024) setCurrentIndex(2);
+      else if (window.innerWidth < 1280) setCurrentIndex(3);
+      else setCurrentIndex(4);
+    };
 
-    return () => clearInterval(interval);
-  }, [totalCards]);
+    update();
+    window.addEventListener("resize", update);
+
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
   return (
     <section
-      className="py-24 px-8 max-w-7xl mx-auto relative overflow-hidden"
+      className="py-24 px-8 mx-auto relative overflow-hidden"
       id="centres"
     >
       {/* Background Pattern */}
@@ -103,31 +110,33 @@ const Centres = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-lg text-gray-700 mb-12 font-light leading-relaxed max-w-4xl mx-auto"
           >
-            Like the disciplined formations of the Indian Armed Forces, our
-            research centres stand as strategic outposts, each dedicated to
-            defending and advancing India's interests across critical domains.
-            From legal fortifications to economic offensives, these divisions
-            embody the warrior spirit of knowledge - vigilant, strategic, and
-            unwavering in their commitment to national excellence.
+            In a nation as diverse and dynamic as India, knowledge isn't just an
+            asset, it's an instrument of change. The Indian Netizens' six
+            dedicated research centres serve as platforms where rigorous thought
+            meets real-world relevance. These centres, each with a unique
+            thematic focus, aim to decode, document, and drive conversations
+            that define India’s past, present, and future across diplomacy,
+            governance, law, security, economy, and internal dynamics. From
+            youth-led policy thinking to in-depth analysis of global and
+            national issues, our research ecosystem is built to amplify India’s
+            voice: fearlessly, factually, and forward-looking.
           </motion.p>
         </div>
 
         {/* Carousel Container */}
-        <div className="relative overflow-hidden mx-auto min-w-[100vh] max-w-4xl">
+        <div className="relative overflow-hidden max-w-7xl mx-auto">
           <motion.div
             className="flex gap-6"
-            animate={{
-              x: `-${currentIndex * (100 / visibleCards)}%`,
-            }}
+            animate={{ x: [currentIndex, "-50%"] }}
             transition={{
-              duration: 25,
+              duration: 30,
               ease: "linear",
               repeat: Infinity,
-              repeatType: "loop",
-              repeatDelay: 0,
+              // repeatType: "loop",
+              // repeatDelay: 0,
             }}
             style={{
-              width: `${(duplicatedCentres.length / visibleCards) * 100}%`,
+              width: `${(duplicatedCentres.length / currentIndex) * 90}%`,
             }}
           >
             {duplicatedCentres.map((centre, index) => (
@@ -135,7 +144,7 @@ const Centres = () => {
                 key={`${centre.id}-${index}`}
                 className="relative w-1/4 h-80 rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
                 whileHover={{ scale: 1.05 }}
-                transition={{ type: "tween", stiffness: 300, damping: 20 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 {/* Background Image */}
                 <div
@@ -166,11 +175,11 @@ const Centres = () => {
                 </div>
 
                 {/* Rank Badge */}
-                <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-gradient-to-br from-[#FF9933] to-[#FF6B35] flex items-center justify-center shadow-md">
+                {/* <div className="absolute top-4 right-4 w-8 h-8 rounded-full bg-gradient-to-br from-[#FF9933] to-[#FF6B35] flex items-center justify-center shadow-md">
                   <span className="text-white font-bold text-xs">
                     {centre.id}
                   </span>
-                </div>
+                </div> */}
               </motion.div>
             ))}
           </motion.div>

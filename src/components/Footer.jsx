@@ -29,7 +29,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative overflow-hidden text-white mt-12">
+    <footer className="relative overflow-hidden text-white">
       <div className="absolute inset-0 bg-blue-950" />
       <div className="absolute inset-0 bg-black/20 mix-blend-multiply" />
 

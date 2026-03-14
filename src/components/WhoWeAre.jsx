@@ -181,7 +181,7 @@ const WhoWeAre = () => {
         >
           <a
             href="#about-details"
-            className="inline-flex items-center gap-3 bg-gradient-to-r from-[#FF9933] to-[#FF6B35] text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300 group"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-[#FF9933] to-[#FF6B35] text-white px-8 py-4 rounded-full font-bold text-md hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300 group"
           >
             Discover Our Story
             <ArrowRight
