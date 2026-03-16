@@ -2,8 +2,40 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { ArrowRight, Users, Target, Globe, Heart } from "lucide-react";
+import MagicBento from "../ReactBits/MagicBento";
 
 const WhoWeAre = () => {
+  const features = [
+    {
+      icon:<Users/>,
+      label: "Community",
+      title: "Community",
+      description:
+        "Building a network of passionate young minds committed to India's future.",
+    },
+    {
+      icon:<Target/>,
+      label: "Impact",
+      title: "Impact",
+      description:
+        "Driving real change through policy recommendations and strategic initiatives.",
+    },
+    {
+      icon: <Globe/>,
+      label: "Global Reach",
+      title: "Global Reach",
+      description:
+        "Connecting Indian perspectives with international dialogues and partnerships.",
+    },
+    {
+      icon:<Heart/>,
+      label: "Authenticity",
+      title: "Authenticity",
+      description:
+        "Staying true to our roots while embracing innovation and progress.",
+    },
+  ];
+
   const titleWords = ["Who", "We", "Are"];
 
   const containerVars = {
@@ -27,13 +59,16 @@ const WhoWeAre = () => {
     },
   };
 
-  const cardVars = {
-    hidden: { opacity: 0, y: 50 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  };
+  // const cardVars = {
+  //   hidden: { opacity: 0, y: 50 },
+  //   show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  // };
 
   return (
-    <section className="relative py-32 px-6 min-h-[90vh] overflow-hidden" id="about">
+    <section
+      className="relative py-32 px-6 min-h-[90vh] overflow-hidden"
+      id="about"
+    >
       {/* Background Image with Overlay */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-fixed"
@@ -55,8 +90,12 @@ const WhoWeAre = () => {
         >
           {titleWords.map((word, i) => {
             let colorClass = "text-white";
-            if (i === 0) colorClass = "bg-gradient-to-r from-[#FF9933] to-[#FF6B35] bg-clip-text text-transparent";
-            if (i === 1) colorClass = "bg-gradient-to-r from-[#4B5320] to-[#228B22] bg-clip-text text-transparent";
+            if (i === 0)
+              colorClass =
+                "bg-gradient-to-r from-[#FF9933] to-[#FF6B35] bg-clip-text text-transparent";
+            if (i === 1)
+              colorClass =
+                "bg-gradient-to-r from-[#4B5320] to-[#228B22] bg-clip-text text-transparent";
 
             return (
               <motion.span
@@ -78,7 +117,8 @@ const WhoWeAre = () => {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="text-xl md:text-2xl text-gray-300 mb-16 text-center font-light leading-relaxed"
         >
-          Empowering India's voice in a changing world through youth-led innovation and strategic thinking.
+          Empowering India's voice in a changing world through youth-led
+          innovation and strategic thinking.
         </motion.p>
 
         {/* Main Content */}
@@ -92,10 +132,16 @@ const WhoWeAre = () => {
             className="space-y-6"
           >
             <p className="text-lg text-gray-200 leading-relaxed">
-              We are a dynamic youth-led think tank dedicated to amplifying India's strategic presence in the global arena. Our mission is to bridge the gap between policy, technology, and public discourse, fostering informed decision-making that serves India's interests.
+              We are a dynamic youth-led think tank dedicated to amplifying
+              India's strategic presence in the global arena. Our mission is to
+              bridge the gap between policy, technology, and public discourse,
+              fostering informed decision-making that serves India's interests.
             </p>
             <p className="text-lg text-gray-200 leading-relaxed">
-              Through cutting-edge research, digital diplomacy initiatives, and grassroots advocacy, we empower the next generation of Indian leaders to navigate complex geopolitical landscapes with confidence and clarity.
+              Through cutting-edge research, digital diplomacy initiatives, and
+              grassroots advocacy, we empower the next generation of Indian
+              leaders to navigate complex geopolitical landscapes with
+              confidence and clarity.
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <span className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm text-white border border-white/20">
@@ -111,14 +157,29 @@ const WhoWeAre = () => {
           </motion.div>
 
           {/* Feature Cards */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.8, duration: 0.8 }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-6"
-          >
-            <motion.div
+            className="grid grid-cols-2 sm:grid-cols-2 gap-6"
+          > */}
+            <MagicBento
+            cards={features}
+            textAutoHide={true}
+            enableStars
+            enableSpotlight
+            enableBorderGlow={true}
+            enableTilt={false}
+            enableMagnetism={false}
+            clickEffect
+            spotlightRadius={400}
+            particleCount={12}
+            glowColor="132, 0, 255"
+            disableAnimations={false}
+          />
+           
+            {/* <motion.div
               variants={cardVars}
               initial="hidden"
               whileInView="show"
@@ -126,8 +187,13 @@ const WhoWeAre = () => {
               className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300"
             >
               <Users className="w-8 h-8 text-[#FF9933] mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">Community</h3>
-              <p className="text-gray-300 text-sm">Building a network of passionate young minds committed to India's future.</p>
+              <h3 className="text-xl font-semibold text-white mb-2">
+                Community
+              </h3>
+              <p className="text-gray-300 text-sm">
+                Building a network of passionate young minds committed to
+                India's future.
+              </p>
             </motion.div>
 
             <motion.div
@@ -140,7 +206,10 @@ const WhoWeAre = () => {
             >
               <Target className="w-8 h-8 text-[#4B5320] mb-4" />
               <h3 className="text-xl font-semibold text-white mb-2">Impact</h3>
-              <p className="text-gray-300 text-sm">Driving real change through policy recommendations and strategic initiatives.</p>
+              <p className="text-gray-300 text-sm">
+                Driving real change through policy recommendations and strategic
+                initiatives.
+              </p>
             </motion.div>
 
             <motion.div
@@ -152,8 +221,13 @@ const WhoWeAre = () => {
               className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300"
             >
               <Globe className="w-8 h-8 text-[#FF6B35] mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">Global Reach</h3>
-              <p className="text-gray-300 text-sm">Connecting Indian perspectives with international dialogues and partnerships.</p>
+              <h3 className="text-xl font-semibold text-white mb-2">
+                Global Reach
+              </h3>
+              <p className="text-gray-300 text-sm">
+                Connecting Indian perspectives with international dialogues and
+                partnerships.
+              </p>
             </motion.div>
 
             <motion.div
@@ -165,10 +239,15 @@ const WhoWeAre = () => {
               className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300"
             >
               <Heart className="w-8 h-8 text-[#228B22] mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">Authenticity</h3>
-              <p className="text-gray-300 text-sm">Staying true to our roots while embracing innovation and progress.</p>
+              <h3 className="text-xl font-semibold text-white mb-2">
+                Authenticity
+              </h3>
+              <p className="text-gray-300 text-sm">
+                Staying true to our roots while embracing innovation and
+                progress.
+              </p>
             </motion.div>
-          </motion.div>
+          </motion.div> */}
         </div>
 
         {/* Call to Action */}
