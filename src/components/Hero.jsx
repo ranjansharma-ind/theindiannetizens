@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import parliamentImg from "../assets/images/parliament.png";
 import ShinyText from "../ReactBits/ShinyText";
+import { InteractiveHoverButton } from "../ReactBits/InteractiveButton";
 
 const Hero = () => {
   const titleWords = ["India's", "Next-Gen", "Think-Tank."];
@@ -33,6 +34,7 @@ const Hero = () => {
     <section className="min-h-[90vh] pt-24 pb-12 flex items-center bg-gradient-to-br from-[#f5f8fc] via-white to-[#fff9f2] overflow-hidden relative">
       {/* Abstract Background Design Elements (Indian Tricolor subtle hints) */}
       <div className="absolute top-0 right-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+        
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 0.08, scale: 1 }}
@@ -103,7 +105,8 @@ const Hero = () => {
             transition={{ delay: 0.8, duration: 0.8, type: "spring" }}
             className="text-xl md:text-2xl text-gray-700 mb-12 font-medium pl-5 border-l-[3px] border-[#4B5320]/30 leading-relaxed"
           >
-            Driven by <span className="text-[#000080] font-bold">Vision</span>.
+            Driven by <span className="text-[#000080] font-bold">Vision</span>
+            .
             <br className="hidden sm:block" />
             Powered by <span className="text-[#FF9933] font-bold">Youth</span>.
           </motion.p>
@@ -128,16 +131,7 @@ const Hero = () => {
                 className="group-hover:translate-x-1 transition-transform"
               />
             </motion.button>
-            <motion.button
-              whileHover={{
-                scale: 1.05,
-                backgroundColor: "rgba(0, 0, 128, 0.05)",
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-transparent border-2 border-[#000080]/20 text-[#000080] px-8 py-4 rounded-full font-bold text-sm transition-all duration-300 flex items-center justify-center hover:border-[#000080]"
-            >
-              Read Reports
-            </motion.button>
+            <InteractiveHoverButton/>
           </motion.div>
         </div>
 

@@ -636,7 +636,7 @@ const MagicBento = ({
         <BentoCardGrid gridRef={gridRef}>
           <div className=".card-responsive grid grid-cols-2 gap-3">
             {cards.map((card, index) => {
-              const baseClassName = `card flex p-4 flex-col justify-between relative aspect-[4/3] min-h-[200px] w-full max-w-full p-5 rounded-[20px] border border-solid font-light overflow-hidden transition-colors duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
+              const baseClassName = `card flex p-4 flex-col justify-between relative aspect-[4/3] min-h-[228px] w-full max-w-full p-5 rounded-[20px] border border-solid font-light overflow-hidden transition-colors duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
                 enableBorderGlow ? "card--border-glow" : ""
               }`;
 

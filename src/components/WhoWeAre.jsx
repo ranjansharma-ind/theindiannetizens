@@ -7,28 +7,28 @@ import MagicBento from "../ReactBits/MagicBento";
 const WhoWeAre = () => {
   const features = [
     {
-      icon:<Users/>,
+      icon: <Users />,
       label: "Community",
       title: "Community",
       description:
         "Building a network of passionate young minds committed to India's future.",
     },
     {
-      icon:<Target/>,
+      icon: <Target />,
       label: "Impact",
       title: "Impact",
       description:
         "Driving real change through policy recommendations and strategic initiatives.",
     },
     {
-      icon: <Globe/>,
+      icon: <Globe />,
       label: "Global Reach",
       title: "Global Reach",
       description:
         "Connecting Indian perspectives with international dialogues and partnerships.",
     },
     {
-      icon:<Heart/>,
+      icon: <Heart />,
       label: "Authenticity",
       title: "Authenticity",
       description:
@@ -157,14 +157,7 @@ const WhoWeAre = () => {
           </motion.div>
 
           {/* Feature Cards */}
-          {/* <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-            className="grid grid-cols-2 sm:grid-cols-2 gap-6"
-          > */}
-            <MagicBento
+          <MagicBento
             cards={features}
             textAutoHide={true}
             enableStars
@@ -178,76 +171,6 @@ const WhoWeAre = () => {
             glowColor="132, 0, 255"
             disableAnimations={false}
           />
-           
-            {/* <motion.div
-              variants={cardVars}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300"
-            >
-              <Users className="w-8 h-8 text-[#FF9933] mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Community
-              </h3>
-              <p className="text-gray-300 text-sm">
-                Building a network of passionate young minds committed to
-                India's future.
-              </p>
-            </motion.div>
-
-            <motion.div
-              variants={cardVars}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300"
-            >
-              <Target className="w-8 h-8 text-[#4B5320] mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">Impact</h3>
-              <p className="text-gray-300 text-sm">
-                Driving real change through policy recommendations and strategic
-                initiatives.
-              </p>
-            </motion.div>
-
-            <motion.div
-              variants={cardVars}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300"
-            >
-              <Globe className="w-8 h-8 text-[#FF6B35] mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Global Reach
-              </h3>
-              <p className="text-gray-300 text-sm">
-                Connecting Indian perspectives with international dialogues and
-                partnerships.
-              </p>
-            </motion.div>
-
-            <motion.div
-              variants={cardVars}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300"
-            >
-              <Heart className="w-8 h-8 text-[#228B22] mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Authenticity
-              </h3>
-              <p className="text-gray-300 text-sm">
-                Staying true to our roots while embracing innovation and
-                progress.
-              </p>
-            </motion.div>
-          </motion.div> */}
         </div>
 
         {/* Call to Action */}
